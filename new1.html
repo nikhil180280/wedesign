@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enhanced CSE Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Hover Animation for buttons/links */
+        a {
+            display: inline-block;
+            padding: 8px 14px;
+            margin: 6px 0;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+
+            /* Animation */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        a:hover {
+            background: #0056b3;
+            transform: scale(1.12);
+            box-shadow: 0px 0px 12px rgba(0,0,255,0.5);
+        }
+
+        img {
+            width: 250px;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            list-style-type: none;
+        }
+
+        /* Hidden checkbox for toggle */
+        .toggle-box {
+            display: none;
+        }
+
+        /* Main menu label */
+        .menu-label {
+            cursor: pointer;
+            background: #ddd;
+            padding: 8px;
+            border-radius: 6px;
+            display: inline-block;
+            transition: 0.3s ease;
+            font-weight: bold;
+        }
+
+        .menu-label:hover {
+            background: #ccc;
+            transform: scale(1.05);
+        }
+
+        /* Submenu hidden by default */
+        .subitems {
+            display: none;
+            margin-top: 5px;
+            margin-left: 20px;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Show submenu when checkbox is checked */
+        .toggle-box:checked + .menu-label + .subitems {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #555;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #ddd;
+        }
+
+        /* Marquee glow effect */
+        marquee h1 {
+            text-shadow: 0px 0px 10px #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <marquee><h1>Welcome to CSE Sample Webpage</h1></marquee>
+
+    <!-- Links Section -->
+    <div class="section">
+        <h2>CSE Related Useful Links</h2>
+        <a href="https://www.geeksforgeeks.org" target="_blank">GeeksForGeeks</a> <br>
+        <a href="https://www.w3schools.com" target="_blank">W3Schools</a> <br>
+        <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+    </div>
+
+    <!-- Image Section -->
+    <div class="section">
+        <h2>Sample Image</h2>
+        <img src="OIP.jpg" alt="CSE Image">
+    </div>
+
+    <!-- Click-to-expand Menu List -->
+    <div class="section">
+        <h2>Top CSE Subjects (Click to View)</h2>
+        <ul>
+
+            <li>
+                <input type="checkbox" class="toggle-box" id="dsa">
+                <label for="dsa" class="menu-label">Data Structures & Algorithms</label>
+                <div class="subitems">
+                    <label><input type="radio" name="dsa"> Arrays</label>
+                    <label><input type="radio" name="dsa"> Linked Lists</label>
+                    <label><input type="radio" name="dsa"> Trees</label>
+                    <label><input type="radio" name="dsa"> Graphs</label>
+                </div>
+            </li>
+
+            <li>
+                <input type="checkbox" class="toggle-box" id="os">
+                <label for="os" class="menu-label">Operating Systems</label>
+                <div class="subitems">
+                    <label><input type="radio" name="os"> Process Management</label>
+                    <label><input type="radio" name="os"> Memory Management</label>
+                    <label><input type="radio" name="os"> Scheduling</label>
+                    <label><input type="radio" name="os"> File System</label>
+                </div>
+            </li>
+
+            <li>
+                <input type="checkbox" class="toggle-box" id="dbms">
+                <label for="dbms" class="menu-label">Database Management Systems</label>
+                <div class="subitems">
+                    <label><input type="radio" name="dbms"> SQL</label>
+                    <label><input type="radio" name="dbms"> Normalization</label>
+                    <label><input type="radio" name="dbms"> Transactions</label>
+                    <label><input type="radio" name="dbms"> Indexing</label>
+                </div>
+            </li>
+
+            <li>
+                <input type="checkbox" class="toggle-box" id="net">
+                <label for="net" class="menu-label">Computer Networks</label>
+                <div class="subitems">
+                    <label><input type="radio" name="net"> OSI Model</label>
+                    <label><input type="radio" name="net"> TCP/IP</label>
+                    <label><input type="radio" name="net"> Routing</label>
+                    <label><input type="radio" name="net"> Network Security</label>
+                </div>
+            </li>
+
+            <li>
+                <input type="checkbox" class="toggle-box" id="flat">
+                <label for="flat" class="menu-label">Formal Language & Automata Theory</label>
+                <div class="subitems">
+                    <label><input type="radio" name="flat"> DFA</label>
+                    <label><input type="radio" name="flat"> NFA</label>
+                    <label><input type="radio" name="flat"> Regular Expressions</label>
+                    <label><input type="radio" name="flat"> Turing Machines</label>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- Table Section -->
+    <div class="section">
+        <h2>Sample Student Details</h2>
+        <table>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>A24126510111</td>
+                <td>Sudheesh</td>
+                <td>CSE</td>
+                <td>2nd</td>
+            </tr>
+            <tr>
+                <td>A24126510084</td>
+                <td>Nikhil</td>
+                <td>CSE</td>
+                <td>2nd</td>
+            </tr>
+            <tr>
+                <td>A24126510073</td>
+                <td>Kiran</td>
+                <td>CSE</td>
+                <td>2nd</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
