@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSE Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <title>CSE Webpage</title>
+
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+        crossorigin="anonymous"
+    >
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
             background: #f4f4f4;
         }
 
@@ -16,231 +22,227 @@
         }
 
         .section {
-            background: white;
+            background: #ffffff;
             padding: 20px;
             margin-bottom: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        /* Hover Animation for buttons/links */
-        a {
+        /* Link hover animation */
+        a.custom-link {
             display: inline-block;
             padding: 8px 14px;
             margin: 6px 0;
-            background: #007bff;
-            color: white;
+            background: #0d6efd;
+            color: #fff;
             text-decoration: none;
             border-radius: 6px;
-
-            /* Animation */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            transition: 0.3s ease;
         }
-        a:hover {
-            background: #0056b3;
-            transform: scale(1.12);
-            box-shadow: 0px 0px 12px rgba(0,0,255,0.5);
+
+        a.custom-link:hover {
+            background: #084298;
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(0, 0, 255, 0.4);
         }
 
         img {
             width: 250px;
             border-radius: 10px;
-            margin-top: 10px;
             transition: transform 0.3s ease;
         }
+
         img:hover {
             transform: scale(1.05);
         }
 
-        ul {
-            margin-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            list-style-type: none;
-        }
-
-        /* Hidden checkbox for toggle */
+        /* Toggle menu */
         .toggle-box {
             display: none;
         }
 
-        /* Main menu label */
         .menu-label {
             cursor: pointer;
-            background: #ddd;
-            padding: 8px;
+            background: #dee2e6;
+            padding: 8px 12px;
             border-radius: 6px;
+            font-weight: bold;
             display: inline-block;
             transition: 0.3s ease;
-            font-weight: bold;
         }
 
         .menu-label:hover {
-            background: #ccc;
+            background: #ced4da;
             transform: scale(1.05);
         }
 
-        /* Submenu hidden by default */
         .subitems {
             display: none;
-            margin-top: 5px;
+            margin-top: 8px;
             margin-left: 20px;
-            background: #f0f0f0;
+            background: #f8f9fa;
             padding: 10px;
             border-radius: 8px;
-            animation: fadeIn 0.4s ease;
         }
 
-        /* Show submenu when checkbox is checked */
         .toggle-box:checked + .menu-label + .subitems {
             display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        table, th, td {
-            border: 1px solid #555;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background: #ddd;
-        }
-
-        /* Marquee glow effect */
-        marquee h1 {
-            text-shadow: 0px 0px 10px #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <marquee><h1>Welcome to CSE Sample Webpage</h1></marquee>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">CSE Hub</a>
 
-    <!-- Links Section -->
+        <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#cseNavbar"
+            aria-controls="cseNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="cseNavbar">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a 
+                        class="nav-link dropdown-toggle" 
+                        href="#" 
+                        role="button" 
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Subjects
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">DSA</a></li>
+                        <li><a class="dropdown-item" href="#">OS</a></li>
+                        <li><a class="dropdown-item" href="#">DBMS</a></li>
+                        <li><a class="dropdown-item" href="#">CN</a></li>
+                        <li><a class="dropdown-item" href="#">FLAT</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Students</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-5">
+
+    <h1 class="text-center mb-4 text-primary">
+        Welcome to CSE Sample Webpage
+    </h1>
+
     <div class="section">
-        <h2>CSE Related Useful Links</h2>
-        <a href="https://www.geeksforgeeks.org" target="_blank">GeeksForGeeks</a> <br>
-        <a href="https://www.w3schools.com" target="_blank">W3Schools</a> <br>
-        <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+        <h2>Useful CSE Resources</h2>
+        <a class="custom-link" href="https://www.geeksforgeeks.org" target="_blank">GeeksForGeeks</a><br>
+        <a class="custom-link" href="https://www.w3schools.com" target="_blank">W3Schools</a><br>
+        <a class="custom-link" href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
     </div>
 
-    <!-- Image Section -->
-    <div class="section">
+    <div class="section text-center">
         <h2>Sample Image</h2>
         <img src="OIP.jpg" alt="CSE Image">
     </div>
 
-    <!-- Click-to-expand Menu List -->
     <div class="section">
-        <h2>Top CSE Subjects (Click to View)</h2>
-        <ul>
+        <h2>Top CSE Subjects</h2>
+        <ul class="list-unstyled">
 
-            <li>
+            <li class="mb-3">
                 <input type="checkbox" class="toggle-box" id="dsa">
                 <label for="dsa" class="menu-label">Data Structures & Algorithms</label>
                 <div class="subitems">
-                    <label><input type="radio" name="dsa"> Arrays</label>
-                    <label><input type="radio" name="dsa"> Linked Lists</label>
-                    <label><input type="radio" name="dsa"> Trees</label>
-                    <label><input type="radio" name="dsa"> Graphs</label>
+                    <p>Arrays, Linked Lists, Trees, Graphs</p>
                 </div>
             </li>
 
-            <li>
+            <li class="mb-3">
                 <input type="checkbox" class="toggle-box" id="os">
                 <label for="os" class="menu-label">Operating Systems</label>
                 <div class="subitems">
-                    <label><input type="radio" name="os"> Process Management</label>
-                    <label><input type="radio" name="os"> Memory Management</label>
-                    <label><input type="radio" name="os"> Scheduling</label>
-                    <label><input type="radio" name="os"> File System</label>
+                    <p>Processes, Memory, Scheduling, File Systems</p>
                 </div>
             </li>
 
-            <li>
+            <li class="mb-3">
                 <input type="checkbox" class="toggle-box" id="dbms">
-                <label for="dbms" class="menu-label">Database Management Systems</label>
+                <label for="dbms" class="menu-label">DBMS</label>
                 <div class="subitems">
-                    <label><input type="radio" name="dbms"> SQL</label>
-                    <label><input type="radio" name="dbms"> Normalization</label>
-                    <label><input type="radio" name="dbms"> Transactions</label>
-                    <label><input type="radio" name="dbms"> Indexing</label>
-                </div>
-            </li>
-
-            <li>
-                <input type="checkbox" class="toggle-box" id="net">
-                <label for="net" class="menu-label">Computer Networks</label>
-                <div class="subitems">
-                    <label><input type="radio" name="net"> OSI Model</label>
-                    <label><input type="radio" name="net"> TCP/IP</label>
-                    <label><input type="radio" name="net"> Routing</label>
-                    <label><input type="radio" name="net"> Network Security</label>
-                </div>
-            </li>
-
-            <li>
-                <input type="checkbox" class="toggle-box" id="flat">
-                <label for="flat" class="menu-label">Formal Language & Automata Theory</label>
-                <div class="subitems">
-                    <label><input type="radio" name="flat"> DFA</label>
-                    <label><input type="radio" name="flat"> NFA</label>
-                    <label><input type="radio" name="flat"> Regular Expressions</label>
-                    <label><input type="radio" name="flat"> Turing Machines</label>
+                    <p>SQL, Normalization, Transactions, Indexing</p>
                 </div>
             </li>
 
         </ul>
     </div>
 
-    <!-- Table Section -->
     <div class="section">
-        <h2>Sample Student Details</h2>
-        <table>
-            <tr>
-                <th>Roll No</th>
-                <th>Name</th>
-                <th>Branch</th>
-                <th>Year</th>
-            </tr>
-            <tr>
-                <td>A24126510111</td>
-                <td>Sudheesh</td>
-                <td>CSE</td>
-                <td>2nd</td>
-            </tr>
-            <tr>
-                <td>A24126510084</td>
-                <td>Nikhil</td>
-                <td>CSE</td>
-                <td>2nd</td>
-            </tr>
-            <tr>
-                <td>A24126510073</td>
-                <td>Kiran</td>
-                <td>CSE</td>
-                <td>2nd</td>
-            </tr>
+        <h2>Core Concepts Quick Reference</h2>
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Subject</th>
+                    <th>Key Concept</th>
+                    <th>Relevance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>**DSA**</td>
+                    <td>Time Complexity ($O(n)$)</td>
+                    <td>Algorithm Efficiency</td>
+                </tr>
+                <tr>
+                    <td>**OS**</td>
+                    <td>Deadlock Prevention</td>
+                    <td>Resource Management </td>
+                </tr>
+                <tr>
+                    <td>**DBMS**</td>
+                    <td>Relational Model</td>
+                    <td>Data Organization</td>
+                </tr>
+                <tr>
+                    <td>**CN**</td>
+                    <td>TCP/IP Stack</td>
+                    <td>Network Communication</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
+</div> <footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+        <p class="mb-0">
+            &copy; 2025 CSE Webpage. All rights reserved. | Built with 
+            <a href="https://getbootstrap.com/" target="_blank" class="text-info text-decoration-none">
+                Bootstrap 5
+            </a>
+        </p>
+    </div>
+</footer>
+
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+    crossorigin="anonymous">
+</script>
+
 </body>
 </html>
-
